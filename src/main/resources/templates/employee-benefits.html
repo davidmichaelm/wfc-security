@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head th:replace="frags :: head ('Employee Benefits')"></head>
+
+<body>
+    <nav th:replace="frags :: nav"></nav>
+    <header th:replace="frags :: header"></header>
+
+    <main role="main" class="container">
+        <h2>Employee Benefits</h2>
+        <p>As an employee of WFC, you are entitled to the following benefits.</p>
+        <h3>Employee Discounts</h3>
+        <ul>
+            <li>25% off Cheese Curd Chicken Basket</li>
+            <li>25% off drinks</li>
+            <li>25% off Fried Chicken Ice Cream</li>
+        </ul>
+        <h3>Corporate Benefits</h3>
+        <ul>
+            <li>3 days time off per year</li>
+            <li>Free bandaids</li>
+        </ul>
+    </main>
+
+    <footer th:replace="frags :: footer"></footer>
+
+
+    <th:block th:replace="frags :: scripts"></th:block>
+</body>
+</html>

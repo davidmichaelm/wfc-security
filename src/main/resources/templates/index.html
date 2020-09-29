@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:replace="frags :: head ('Home Page')"></head>
+<body>
+    <nav th:replace="frags :: nav"></nav>
+    <header th:replace="frags :: header"></header>
+
+    <main role="main" class="container">
+        <h2>Welcome,
+            <span sec:authorize="isAnonymous()">Employees!</span>
+            <span sec:authorize="isAuthenticated()" th:text="|${user.username}!|"></span>
+        </h2>
+        <p>WFC is proud of your dedication to fried chicken.</p>
+        <p sec:authorize="isAnonymous()">To view employee information, please log in.</p>
+        <p sec:authorize="isAnonymous()"><a th:href="@{/login}" class="btn btn-primary">Login</a></p>
+        <p sec:authorize="isAuthenticated()"><a th:href="@{/employee-benefits}">Learn more about your employee benefits</a></p>
+        <p sec:authorize="hasAuthority('major')"><a th:href="@{/secret-recipe}">View the Secret Recipe</a></p>
+    </main>
+
+    <footer th:replace="frags :: footer"></footer>
+
+    <th:block th:replace="frags :: scripts"></th:block>
+</body>
+</html>
